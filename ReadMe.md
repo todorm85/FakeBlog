@@ -22,6 +22,8 @@ The blog post list view is the default administrative view. It lists all the blo
 ### Create blog post
 You can create a new blog post by clicking on the "_Create Post_" link from Blog posts list view. Add a title and the post content then click "_Create_".
 
+The post content can be any valid html code.
+
 ## Public views
 These is intended to be viewed by the public website visitors.
 
