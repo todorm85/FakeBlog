@@ -1,0 +1,19 @@
+﻿@model IEnumerable<BlogsSampleApp.Models.Post>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@{
+    ViewBag.Title = "Blog";
+}
+
+<h2>Blog Posts</h2>
+
+@foreach (var post in Model)
+{
+    <div>
+        <h3>@Html.ActionLink(post.Title, "Details", new { id = post.Id })</h3>
+        <p>Posted on @post.CreatedDate.ToString("g")</p>
+    </div>
+}

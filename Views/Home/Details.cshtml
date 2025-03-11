@@ -1,0 +1,8 @@
+﻿@model BlogsSampleApp.Models.Post
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<h2>@Model.Title</h2>
+<p>@Model.Content</p>
+<p><strong>Posted on:</strong> @Model.CreatedDate.ToString("g")</p>
