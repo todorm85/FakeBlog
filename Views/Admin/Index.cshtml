@@ -1,5 +1,4 @@
-﻿@model IEnumerable<CyberPost.Models.Post>
-@{
+﻿@{
     ViewBag.Title = "Manage Posts";
 }
 
@@ -29,7 +28,7 @@
         @foreach (var post in Model)
         {
             <tr>
-                <td>@post.Title</td>
+                <td>@Html.ActionLink((string)post.Title, "EditPost", new { id = post.Id })</td>
                 <td>@post.CreatedDate.ToString("g")</td>
             </tr>
         }

@@ -23,7 +23,8 @@ namespace CyberPost.Controllers
         // GET: /Admin/CreatePost
         public ActionResult CreatePost()
         {
-            return View();
+            ViewBag.Title = "Create Post";
+            return View("EditPost");
         }
 
         // POST: /Admin/CreatePost
@@ -35,6 +36,36 @@ namespace CyberPost.Controllers
             {
                 post.CreatedDate = DateTime.Now;
                 db.Posts.Add(post);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(post);
+        }
+
+        // GET: /Admin/EditPost/5
+        public ActionResult EditPost(int id)
+        {
+            Post post = db.Posts.Find(id);
+            if (post == null)
+            {
+                return HttpNotFound();
+            }
+
+            ViewBag.Title = "Edit Post";
+            return View(post);
+        }
+
+        // POST: /Admin/EditPost/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditPost(Post post)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(post).State = System.Data.Entity.EntityState.Modified;
+                // Preserve the original creation date
+                db.Entry(post).Property(p => p.CreatedDate).IsModified = false;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

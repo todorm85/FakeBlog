@@ -1,0 +1,21 @@
+﻿@model CyberPost.Models.Post
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "container mt-5" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="mb-3">
+        @Html.LabelFor(m => m.Title, new { @class = "form-label" })
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger" })
+    </div>
+    <div class="mb-3">
+        @Html.LabelFor(m => m.Content, new { @class = "form-label" })
+        @Html.TextAreaFor(m => m.Content, new { @class = "form-control", rows = "25" })
+        @Html.ValidationMessageFor(m => m.Content, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">@ViewBag.Title</button>
+    <button type="button" class="btn btn-secondary" onclick="window.history.back();">Back</button>
+}
