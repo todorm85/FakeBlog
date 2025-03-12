@@ -1,4 +1,4 @@
-﻿using BlogsSampleApp.Models;
+﻿using CyberPost.Models;
 using System.Web;
 using System;
 using Microsoft.Owin;
@@ -6,8 +6,8 @@ using Owin;
 using Microsoft.AspNet.Identity.Owin;
 using System.Linq;
 
-[assembly: OwinStartupAttribute(typeof(BlogsSampleApp.Startup))]
-namespace BlogsSampleApp
+[assembly: OwinStartupAttribute(typeof(CyberPost.Startup))]
+namespace CyberPost
 {
     public partial class Startup
     {

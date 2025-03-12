@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BlogsSampleApp.Models
+namespace CyberPost.Models
 {
     public class Post
     {

@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using BlogsSampleApp.Models;
+using CyberPost.Models;
 
-namespace BlogsSampleApp.Controllers
+namespace CyberPost.Controllers
 {
     [Authorize]
     public class AccountController : Controller

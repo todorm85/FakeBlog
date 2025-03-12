@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace BlogsSampleApp
+namespace CyberPost
 {
     public class FilterConfig
     {

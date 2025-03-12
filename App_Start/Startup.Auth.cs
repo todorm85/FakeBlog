@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using BlogsSampleApp.Models;
+using CyberPost.Models;
 
-namespace BlogsSampleApp
+namespace CyberPost
 {
     public partial class Startup
     {
