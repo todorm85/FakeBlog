@@ -3,6 +3,6 @@
     ViewBag.Title = Model.Title;
 }
 
-<h2>@Model.Title</h2>
-<p>@Model.Content</p>
+<h2>Model.Title</h2>
+<div>@Html.Raw(Model.Content)</div>
 <p><strong>Posted on:</strong> @Model.CreatedDate.ToString("g")</p>

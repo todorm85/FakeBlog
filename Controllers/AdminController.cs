@@ -61,16 +61,33 @@ namespace CyberPost.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditPost(Post post)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(post).State = System.Data.Entity.EntityState.Modified;
-                // Preserve the original creation date
-                db.Entry(post).Property(p => p.CreatedDate).IsModified = false;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Entry(post).State = System.Data.Entity.EntityState.Modified;
+                    db.Entry(post).Property(p => p.CreatedDate).IsModified = false;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log exception details securely
+                ModelState.AddModelError("", "An error occurred while saving the post.");
             }
 
             return View(post);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+
+            base.Dispose(disposing);
         }
     }
 }
