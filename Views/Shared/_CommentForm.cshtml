@@ -2,7 +2,6 @@
 
 @using (Html.BeginForm("Create", "Comment", FormMethod.Post, new { @class = "comment-form" }))
 {
-    @Html.AntiForgeryToken()
     @Html.HiddenFor(m => m.PostId)
     
     <div class="form-group mb-3">

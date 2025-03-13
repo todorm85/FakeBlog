@@ -9,7 +9,6 @@ namespace CyberPost.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create(Comment comment)
         {
             if (ModelState.IsValid)
