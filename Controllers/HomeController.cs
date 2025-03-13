@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using CyberPost.Models;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
 namespace CyberPost.Controllers
 {
@@ -20,13 +21,25 @@ namespace CyberPost.Controllers
 
         public ActionResult Details(int id)
         {
-            var post = db.Posts.FirstOrDefault(p => p.Id == id);
+            var post = db.Posts
+                .Include(p => p.Comments.OrderByDescending(c => c.CreatedDate))
+                .FirstOrDefault(p => p.Id == id);
+
             if (post == null)
             {
                 return HttpNotFound();
             }
 
             return View(post);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

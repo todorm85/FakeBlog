@@ -1,0 +1,31 @@
+@model CyberPost.Models.Comment
+
+@using (Html.BeginForm("Create", "Comment", FormMethod.Post, new { @class = "comment-form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.PostId)
+    
+    <div class="form-group mb-3">
+        @Html.LabelFor(m => m.AuthorName)
+        @Html.TextBoxFor(m => m.AuthorName, new { @class = "form-control", placeholder = "Your name" })
+        @Html.ValidationMessageFor(m => m.AuthorName, "", new { @class = "text-danger" })
+    </div>
+    
+    <div class="form-group mb-3">
+        @Html.LabelFor(m => m.AuthorEmail)
+        @Html.TextBoxFor(m => m.AuthorEmail, new { @class = "form-control", placeholder = "Your email (optional)" })
+        @Html.ValidationMessageFor(m => m.AuthorEmail, "", new { @class = "text-danger" })
+    </div>
+    
+    <div class="form-group mb-3">
+        @Html.LabelFor(m => m.Content, "Comment")
+        @Html.TextAreaFor(m => m.Content, new { @class = "form-control", rows = "5", placeholder = "Your comment" })
+        @Html.ValidationMessageFor(m => m.Content, "", new { @class = "text-danger" })
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit Comment</button>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

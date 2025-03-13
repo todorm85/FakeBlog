@@ -9,6 +9,11 @@ namespace CyberPost.Models
 {
     public class Post
     {
+        public Post()
+        {
+            Comments = new HashSet<Comment>();
+        }
+
         public int Id { get; set; }
 
         [Required]
@@ -20,5 +25,7 @@ namespace CyberPost.Models
         public string Content { get; set; }
 
         public DateTime CreatedDate { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

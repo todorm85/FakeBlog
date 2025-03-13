@@ -168,14 +168,22 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="C:/todor/work/AI benchmark/TestApp/BlogsSampleApp/Controllers/\CommentController.cs">
+      <Link>CommentController.cs</Link>
+    </Compile>
+    <Compile Include="C:/todor/work/AI benchmark/TestApp/BlogsSampleApp/Models/\Comment.cs">
+      <Link>Comment.cs</Link>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Post.cs" />
@@ -210,6 +218,12 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include=".github\copilot-instructions.md" />
     <Content Include="ReadMe.md" />
+    <None Include="C:/todor/work/AI benchmark/TestApp/BlogsSampleApp/Views/Shared/\_CommentForm.cshtml">
+      <Link>_CommentForm.cshtml</Link>
+    </None>
+    <None Include="C:/todor/work/AI benchmark/TestApp/BlogsSampleApp/Views/Shared/\_CommentsList.cshtml">
+      <Link>_CommentsList.cshtml</Link>
+    </None>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -257,6 +271,8 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\EditPost.cshtml" />
     <Content Include="Views\Home\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_CommentForm.cshtml" />
+    <Content Include="Views\Shared\_CommentsList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".github\workflows\" />

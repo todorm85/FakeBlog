@@ -3,6 +3,36 @@
     ViewBag.Title = Model.Title;
 }
 
-<h2>Model.Title</h2>
+<h2>@Model.Title</h2>
 <div>@Html.Raw(Model.Content)</div>
 <p><strong>Posted on:</strong> @Model.CreatedDate.ToString("g")</p>
+
+<hr />
+
+<div class="comments-section">
+    <h3>Comments (@Model.Comments.Count)</h3>
+    
+    @Html.Partial("_CommentsList", Model.Comments)
+    
+    <div class="card mt-4">
+        <div class="card-header">
+            <h4>Leave a Comment</h4>
+        </div>
+        <div class="card-body">
+            @if (TempData["CommentSuccess"] != null)
+            {
+                <div class="alert alert-success">
+                    @TempData["CommentSuccess"]
+                </div>
+            }
+            @if (TempData["CommentError"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["CommentError"]
+                </div>
+            }
+            
+            @Html.Partial("_CommentForm", new CyberPost.Models.Comment { PostId = Model.Id })
+        </div>
+    </div>
+</div>
