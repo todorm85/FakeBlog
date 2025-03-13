@@ -22,10 +22,14 @@ namespace CyberPost.Controllers
         public ActionResult Details(int id)
         {
             var post = db.Posts
-                .Include(p => p.Comments.OrderByDescending(c => c.CreatedDate))
+                .Include(p => p.Comments)
                 .FirstOrDefault(p => p.Id == id);
 
-            if (post == null)
+            if (post != null)
+            {
+                post.Comments = post.Comments.OrderByDescending(c => c.CreatedDate).ToList();
+            }
+            else
             {
                 return HttpNotFound();
             }
