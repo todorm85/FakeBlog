@@ -30,3 +30,13 @@ This is the default view of the app that lists all the blogs that have been crea
 
 ### Blog post details
 Displays the blog post details. To navigate back to the blog posts list click on the browser back button.
+
+### Post comments
+Site visitors can leave comments on blog posts. On the blog post details page, a comments section is displayed below the post content. The section includes:
+
+- A list of existing comments showing author name and submission date
+- A form for submitting new comments
+- Comments require a name and content, with an optional email field
+- Validation feedback is provided for submitted comments
+
+Comments are displayed in reverse chronological order (newest first) and include the commenter's name and timestamp.
