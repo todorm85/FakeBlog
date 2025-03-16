@@ -14,7 +14,7 @@ CyberPost is a simple blogging web application. With it posts can be created dir
 You must open a web browser to set up your project after it is hosted on IIS. You will be prompted to create the administrator user when you first run the app. The administrator user is the only user that can create blog posts and is tasked with developing the public site views and content.
 
 ## Administration views
-To enter the administrative views of the app navigate to "_/admin_" path in the browser. You will be asked to login with the administrator account that was created initially.
+To enter the administrative views of the app navigate to _"/admin"_ path in the browser. You will be asked to login with the administrator account that was created initially.
 
 ### Blog posts list
 The blog post list view is the default administrative view. It lists all the blog posts that have been created with the date of creation.
