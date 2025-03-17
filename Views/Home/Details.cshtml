@@ -1,6 +1,29 @@
-﻿@model FakeBlog.Models.Post
+﻿@using System.Text.RegularExpressions
+
+@model FakeBlog.Models.Post
 @{
     ViewBag.Title = Model.Title;
+}
+
+@functions {
+    private string Sanitize(string content)
+    {
+        if (string.IsNullOrEmpty(content))
+            return content;
+
+        // Remove script tags
+        content = Regex.Replace(content, @"<script[^>]*>.*?</script>", "", RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        // Remove javascript protocols
+        content = Regex.Replace(content, @"(javascript:)([^""']+)", "void(0)", RegexOptions.IgnoreCase);
+
+        // Remove event handlers
+        content = Regex.Replace(content, @"on\w+\s*=\s*""[^""]*""", "", RegexOptions.IgnoreCase);
+        content = Regex.Replace(content, @"on\w+\s*=\s*'[^']*'", "", RegexOptions.IgnoreCase);
+        content = Regex.Replace(content, @"on\w+\s*=[^\s>]*", "", RegexOptions.IgnoreCase);
+
+        return content;
+    }
 }
 
 <h2>@Model.Title</h2>

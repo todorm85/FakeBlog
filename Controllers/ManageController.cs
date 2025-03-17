@@ -64,14 +64,41 @@ namespace FakeBlog.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
+            var username = UserManager.GetEmail(userId);
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
                 Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
+                Email = await UserManager.GetEmailAsync(userId)
             };
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> ChangeEmail(IndexViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var userId = User.Identity.GetUserId();
+            var result = await UserManager.SetEmailAsync(userId, model.Email);
+
+            if (result.Succeeded)
+            {
+                var user = await UserManager.FindByIdAsync(userId);
+                if (user != null)
+                {
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                }
+                return RedirectToAction("Index", new { Message = ManageMessageId.Success });
+            }
+
+            AddErrors(result);
             return View(model);
         }
 
@@ -381,7 +408,8 @@ namespace FakeBlog.Controllers
             SetPasswordSuccess,
             RemoveLoginSuccess,
             RemovePhoneSuccess,
-            Error
+            Error,
+            Success
         }
 
 #endregion
