@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace CyberPost.Models
+namespace FakeBlog.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
