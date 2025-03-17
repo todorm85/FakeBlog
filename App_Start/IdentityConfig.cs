@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using CyberPost.Models;
+using FakeBlog.Models;
 
-namespace CyberPost
+namespace FakeBlog
 {
     public class EmailService : IIdentityMessageService
     {

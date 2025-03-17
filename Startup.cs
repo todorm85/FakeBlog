@@ -1,4 +1,4 @@
-﻿using CyberPost.Models;
+﻿using FakeBlog.Models;
 using System.Web;
 using System;
 using Microsoft.Owin;
@@ -6,8 +6,8 @@ using Owin;
 using Microsoft.AspNet.Identity.Owin;
 using System.Linq;
 
-[assembly: OwinStartupAttribute(typeof(CyberPost.Startup))]
-namespace CyberPost
+[assembly: OwinStartupAttribute(typeof(FakeBlog.Startup))]
+namespace FakeBlog
 {
     public partial class Startup
     {

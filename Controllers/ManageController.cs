@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using CyberPost.Models;
+using FakeBlog.Models;
 
-namespace CyberPost.Controllers
+namespace FakeBlog.Controllers
 {
     [Authorize]
     public class ManageController : Controller
