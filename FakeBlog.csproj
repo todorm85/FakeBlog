@@ -182,15 +182,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202503121159189_InitialCreate.cs" />
-    <Compile Include="Migrations\202503121159189_InitialCreate.Designer.cs">
-      <DependentUpon>202503121159189_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202503131006172_AddCommentsTable.cs" />
-    <Compile Include="Migrations\202503131006172_AddCommentsTable.Designer.cs">
-      <DependentUpon>202503131006172_AddCommentsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -313,14 +304,6 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202503121159189_InitialCreate.resx">
-      <DependentUpon>202503121159189_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202503131006172_AddCommentsTable.resx">
-      <DependentUpon>202503131006172_AddCommentsTable.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,8 +1,9 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
 
-namespace CyberPost.Models
+namespace FakeBlog.Models
 {
     public class Comment
     {
@@ -20,6 +21,7 @@ namespace CyberPost.Models
 
         [Required]
         [StringLength(1000)]
+        [AllowHtml]
         public string Content { get; set; }
 
         public DateTime CreatedDate { get; set; }

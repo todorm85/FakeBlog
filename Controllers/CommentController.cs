@@ -1,8 +1,8 @@
 using System;
 using System.Web.Mvc;
-using CyberPost.Models;
+using FakeBlog.Models;
 
-namespace CyberPost.Controllers
+namespace FakeBlog.Controllers
 {
     public class CommentController : Controller
     {
