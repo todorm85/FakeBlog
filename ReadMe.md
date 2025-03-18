@@ -37,6 +37,5 @@ Site visitors can leave comments on blog posts. On the blog post details page, a
 - A list of existing comments showing author name and submission date
 - A form for submitting new comments
 - Comments require a name and content, with an optional email field
-- Validation feedback is provided for submitted comments
 
 Comments are displayed in reverse chronological order (newest first) and include the commenter's name and timestamp.
