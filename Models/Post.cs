@@ -16,6 +16,7 @@ namespace FakeBlog.Models
         public string Title { get; set; }
 
         [Required]
+        [AllowHtml]
         public string Content { get; set; }
 
         public DateTime CreatedDate { get; set; }
