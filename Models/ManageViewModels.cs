@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace CyberPost.Models
+namespace FakeBlog.Models
 {
     public class IndexViewModel
     {

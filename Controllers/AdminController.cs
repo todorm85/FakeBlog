@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using CyberPost.Models;
+using FakeBlog.Models;
 using Microsoft.AspNet.Identity.Owin;
 
-namespace CyberPost.Controllers
+namespace FakeBlog.Controllers
 {
     [Authorize]
     public class AdminController : Controller

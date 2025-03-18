@@ -5,11 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using CyberPost.Models;
+using FakeBlog.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 
-namespace CyberPost
+namespace FakeBlog
 {
     public class MvcApplication : System.Web.HttpApplication
     {

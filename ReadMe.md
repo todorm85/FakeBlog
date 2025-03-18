@@ -1,5 +1,5 @@
-# CyberPost blog app
-CyberPost is a simple blogging web application. With it posts can be created directly in the browser from the restricted administration area.
+# FakeBlog blog app
+FakeBlog is a simple blogging web application. With it posts can be created directly in the browser from the restricted administration area.
 
 ## Requirements
 
