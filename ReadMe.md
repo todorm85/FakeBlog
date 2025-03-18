@@ -20,7 +20,7 @@ To enter the administrative views of the app navigate to _"/admin"_ path in the 
 The blog post list view is the default administrative view. It lists all the blog posts that have been created with the date of creation.
 
 ### Create blog post
-You can create a new blog post by clicking on the "_Create Post_" link from Blog posts list view. Add a title and the post content then click "_Create_".
+You can create a new blog post by clicking on the "_Create Post_" link from Blog posts list view. Add a title and the post content then click "_Create_". You can include html and js code in the post content.
 
 ## Public views
 These are intended to be viewed by the public website visitors.
