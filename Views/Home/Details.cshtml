@@ -4,5 +4,5 @@
 }
 
 <h2>@Model.Title</h2>
-<p>@Model.Content</p>
+<p>@Html.Raw(Model.Content)</p>
 <p><strong>Posted on:</strong> @Model.CreatedDate.ToString("g")</p>
